@@ -62,7 +62,7 @@ const projects = [
     stack: ['AI Skill', 'OpenClaw', 'Claude', 'Chatbot', 'Education', 'Self-exploration'],
     gradient: 'from-emerald-50 via-teal-50 to-cyan-50',
     visual: 'image',
-    image: '/images/work/sacabamba-logo.svg',
+    image: '/images/work/sacabamba-logo.png',
     links: [
       { label: 'GitHub', href: 'https://github.com/curiowls/Sacabamba', icon: 'lucide:github', primary: true },
     ],

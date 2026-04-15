@@ -91,6 +91,16 @@ const expertise = [
                 GitHub
               </a>
             </li>
+            <li>
+              <a
+                href="https://x.com/qianhuang"
+                target="_blank"
+                rel="noopener"
+                class="text-sm hover:text-accent-500 transition-colors"
+              >
+                X (@qianhuang)
+              </a>
+            </li>
           </ul>
         </div>
       </div>

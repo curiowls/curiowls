@@ -1,0 +1,28 @@
+# Nuxt
+.nuxt
+.output
+.data
+dist
+
+# Node
+node_modules
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Medium exports (source archive, not part of the site)
+mediumposts/
+
+# Conversion scripts (dev tooling)
+scripts/

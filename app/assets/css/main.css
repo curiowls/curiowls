@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Dark/technical palette (homepage) — warm ink tones from Tang ref */
+  --color-dark-bg: #0d0b08;
+  --color-dark-surface: #16130f;
+  --color-dark-border: rgba(200, 168, 75, 0.08);
+  --color-dark-text: #ede5d0;
+  --color-dark-muted: #8a8078;
+
+  /* Light/minimal palette (content pages) */
+  --color-light-bg: #fafafa;
+  --color-light-surface: #ffffff;
+  --color-light-border: #e5e7eb;
+  --color-light-text: #1a1a2e;
+  --color-light-muted: #6b7280;
+
+  /* ── Accent palette — dai blue (黛蓝) scale ─────────────────────────
+     accent-600 = #3b5063 = dai blue base = primary CTA on light bg     */
+  --color-accent-50:  #edf1f4;
+  --color-accent-100: #d5dde4;
+  --color-accent-200: #b0bfcc;
+  --color-accent-300: #8aa0b3;
+  --color-accent-400: #6a869d;
+  --color-accent-500: #4d6b82;
+  --color-accent-600: #3b5063;
+  --color-accent-700: #2d3e4e;
+  --color-accent-800: #202d39;
+  --color-accent-900: #151e27;
+  --color-accent-950: #0c1318;
+
+  /* ── Dark theme accents — dai + gold ─────────────────────────────────
+     dai: lightened for AA on #0d0b08 (4.7:1). gold: from Tang palette.  */
+  --color-dai:       #7593ab;
+  --color-dai-light: #94b1c8;
+  --color-dai-dark:  #3b5063;
+  --color-gold:        #c8a84b;
+  --color-gold-light:  #e8cc7a;
+  --color-gold-dark:   #8a6f2e;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'Bruno Ace', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Radii */
+  --radius-glass: 1rem;
+  --radius-card: 1.25rem;
+
+  /* Custom */
+  --blur-glass: 16px;
+}
+
+/* ── Glass morphism utilities ── */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-glass);
+  }
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  .glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius-glass);
+  }
+
+  /* Dark theme gradient text — dai → gold */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-dai), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Light theme gradient text — dai blue */
+  .gradient-text-light {
+    background: linear-gradient(135deg, var(--color-accent-600), var(--color-accent-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ── Grid overlay for homepage ── */
+@layer utilities {
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .crosshair::before,
+  .crosshair::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .crosshair::before {
+    width: 12px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .crosshair::after {
+    width: 1px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ── Scroll reveal ── */
+@layer utilities {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Base styles ── */
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
+  }
+  ::selection {
+    background-color: var(--color-accent-600);
+    color: white;
+  }
+}

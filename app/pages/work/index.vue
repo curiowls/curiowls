@@ -168,7 +168,7 @@ function onCarouselScroll() {
                 v-if="project.image"
                 :src="project.image"
                 :alt="project.name"
-                :class="project.imageFill ? 'w-full h-full object-cover object-center' : 'h-24 w-24 md:h-28 md:w-28 object-contain'"
+                :class="project.imageFill ? 'w-full h-full object-cover object-center' : 'h-40 w-40 md:h-48 md:w-48 object-contain'"
               />
             </div>
 

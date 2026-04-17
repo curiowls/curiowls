@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'en' },
       link: [
+        { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-light-32.png', media: '(prefers-color-scheme: light)' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-light-16.png', media: '(prefers-color-scheme: light)' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-dark-32.png', media: '(prefers-color-scheme: dark)' },

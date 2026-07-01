@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Resume — Chelsea Huang',
-  description: 'Resume of Chelsea Qian Huang — Product strategist and designer specializing in complex B2B financial and operational workflows.',
+  description: 'Resume of Chelsea Qian Huang — Product strategist and designer deep in complex B2B operational workflows and broad on product.',
 })
 </script>
 
@@ -30,7 +30,7 @@ useSeoMeta({
       <!-- Summary -->
       <div class="prose prose-lg max-w-none prose-p:text-light-muted mb-12">
         <p>
-          Product strategist and designer specializing in complex B2B financial and operational workflows. 16 years turning intricate multi-stakeholder systems — billing, revenue recognition, order management, sales, marketplace operations — into clear, usable products.
+          Product strategist and designer deep in complex B2B operational workflows and broad on everything product. 16 years turning intricate multi-stakeholder systems — billing, revenue recognition, order management, sales, marketplace operations — into clear, usable products.
         </p>
       </div>
 
@@ -51,7 +51,7 @@ useSeoMeta({
           <h3 class="font-mono text-xs tracking-widest uppercase text-accent-600 mb-4">Tools & Methods</h3>
           <ul class="space-y-2 text-sm text-light-muted">
             <li>Figma, Google Stitch, Pencil</li>
-            <li>AI workflow: Claude, AI Agents, Midjourney</li>
+            <li>AI workflow: Codex, Claude Code, OpenClaw, Midjourney</li>
             <li>Design Thinking Workshops</li>
             <li>Agile / Lean UX</li>
             <li>HTML / CSS / Prototyping</li>
@@ -64,21 +64,24 @@ useSeoMeta({
       <div class="space-y-8 mb-16">
         <div class="p-6 rounded-xl border border-light-border">
           <div class="flex flex-wrap items-baseline gap-3 mb-3">
-            <h4 class="font-display font-bold text-lg text-light-text">Sabbatical — Explorer, Founder & Designer</h4>
+            <h4 class="font-display font-bold text-lg text-light-text">Lugugul Design</h4>
             <span class="font-mono text-xs text-light-muted">Mar 2024 – Present</span>
           </div>
+          <p class="text-sm text-light-muted mb-3">Founder, Designer & Builder</p>
           <ul class="space-y-1 text-sm text-light-muted list-disc list-inside">
-            <li>Sharpened understanding of behavioral psychology, businesses and investment strategies</li>
-            <li>Built hands-on fluency with GenAI, AI agents and vibe coding</li>
             <li>Founded Lugugul Design Studio for independent design work and applied experimentation</li>
+            <li>Built MeerKatta, CloseCall.ing, MojiMachi, Sacabamba and more</li>
+            <li>Built hands-on understanding and fluency with applied AI, GenAI, AI agents and vibe coding</li>
+            <li>Sharpened understanding of psychology, product, business and investment</li>
           </ul>
         </div>
 
         <div class="p-6 rounded-xl border border-light-border">
           <div class="flex flex-wrap items-baseline gap-3 mb-3">
             <h4 class="font-display font-bold text-lg text-light-text">Apty</h4>
-            <span class="font-mono text-xs text-light-muted">Director, Product Designer · Nov 2023 – Feb 2024</span>
+            <span class="font-mono text-xs text-light-muted">Director, Product Design · Nov 2023 – Feb 2024</span>
           </div>
+          <p class="text-sm text-light-muted mb-3">A short but energizing 90-day engagement that sparked my decision to pursue independent exploration.</p>
           <ul class="space-y-1 text-sm text-light-muted list-disc list-inside">
             <li>Defined strategy to unify product experience across 3 products</li>
             <li>Positioned end-user experience as an "Augmented Reality" layer of host app</li>
@@ -93,6 +96,7 @@ useSeoMeta({
           <ul class="space-y-1 text-sm text-light-muted list-disc list-inside">
             <li>Led design strategy & UX for CodeSigning product line from PMF into market-focused design</li>
             <li>Shifted auditing feature from reactive reporting to proactive health monitoring</li>
+            <li>Identified deployment and adoption impediments and designed functionality to reduce developer friction</li>
             <li>Redesigned IA for platform logs from stateless event-driven to stateful action-driven model</li>
           </ul>
         </div>
@@ -106,6 +110,7 @@ useSeoMeta({
             <li>Led UX of operations side of $20B+ CRE marketplace</li>
             <li>Led 2-day workshop with 10 stakeholders to map 6-phase deal lifecycle</li>
             <li>Redesigned buyer profile into contextual "buyer resume" layered by deal phase</li>
+            <li>Designed in-system fee management, template control, and a visual builder for contract clauses and sections</li>
           </ul>
         </div>
 
@@ -117,6 +122,7 @@ useSeoMeta({
           <ul class="space-y-1 text-sm text-light-muted list-disc list-inside">
             <li>Owned product design for Finance Line — Order Mgmt, Billing, Revenue Recognition</li>
             <li>Developed structured vs. unstructured design framework for billing UX</li>
+            <li>Designed account landing page surfacing impact-ranked next actions based on billing patterns</li>
             <li>Defined infrastructure components of Nova Design System 2.0</li>
           </ul>
         </div>
@@ -141,6 +147,16 @@ useSeoMeta({
           <ul class="space-y-1 text-sm text-light-muted list-disc list-inside">
             <li>Designed new generation of Fiery Command Workstation for production printing</li>
             <li>Created first WYSIWYG visual printing driver for Windows 8</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl border border-light-border">
+          <div class="flex flex-wrap items-baseline gap-3 mb-3">
+            <h4 class="font-display font-bold text-lg text-light-text">Independent Designer</h4>
+            <span class="font-mono text-xs text-light-muted">Jan 2008 – Jul 2010</span>
+          </div>
+          <ul class="space-y-1 text-sm text-light-muted list-disc list-inside">
+            <li>Worked with multiple clients designing web apps for online education, dating, health, and tee time booking</li>
           </ul>
         </div>
       </div>

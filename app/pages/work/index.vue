@@ -25,8 +25,37 @@ const filtered = computed(() => {
   return caseStudies.value.filter(cs => cs.industry === activeFilter.value)
 })
 
+const workAnchors = [
+  { label: 'Consumer Apps', href: '#consumer-apps' },
+  { label: 'Enterprise/B2B Systems', href: '#enterprise-b2b-systems' },
+]
+
+function scrollToWorkAnchor(href: string) {
+  const target = document.querySelector(href)
+  if (!target) return
+
+  target.scrollIntoView({
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    block: 'start',
+  })
+  history.pushState(null, '', href)
+}
+
 // ── Carousel state ──
 const projects = [
+  {
+    name: 'MeerKatta',
+    tagline: 'built to capture perishable thoughts',
+    description: 'Merely a click from idea to post. Speak into any text field — MeerKatta transcribes, adapts tone to the active app, and drops polished text at your cursor. Record video — it handles trim, captions, resize, and multi-platform export. All processing runs locally on your Mac. No prompting, no cloud uploads.',
+    stack: ['Voice-to-Text', 'Video Processing', 'On-Device AI', 'macOS', 'iOS', 'MCP', 'Gamification'],
+    gradient: 'from-amber-50 via-orange-50 to-yellow-50',
+    visual: 'image',
+    image: '/images/work/meerkatta-thumb.png',
+    links: [
+      { label: 'Live Site', href: 'https://meerkatta.com', icon: 'lucide:external-link', primary: true },
+      { label: 'GitHub', href: 'https://github.com/curiowls/meerkatta', icon: 'lucide:github' },
+    ],
+  },
   {
     name: 'MojiMachi',
     kanji: '文字街',
@@ -40,19 +69,6 @@ const projects = [
     links: [
       { label: 'Live Site', href: 'https://mojimachi.com', icon: 'lucide:external-link', primary: true },
       { label: 'GitHub', href: 'https://github.com/curiowls/mojimachigame', icon: 'lucide:github' },
-    ],
-  },
-  {
-    name: 'MeerKatta',
-    tagline: 'AI Spokesperson for Everyone',
-    description: 'Merely a click from idea to post. Speak into any text field — MeerKatta transcribes, adapts tone to the active app, and drops polished text at your cursor. Record video — it handles trim, captions, resize, and multi-platform export. All processing runs locally on your Mac. No prompting, no cloud uploads.',
-    stack: ['Voice-to-Text', 'Video Processing', 'On-Device AI', 'macOS', 'iOS', 'MCP', 'Gamification'],
-    gradient: 'from-amber-50 via-orange-50 to-yellow-50',
-    visual: 'image',
-    image: '/images/work/meerkatta-thumb.png',
-    links: [
-      { label: 'Live Site', href: 'https://meerkatta.com', icon: 'lucide:external-link', primary: true },
-      { label: 'GitHub', href: 'https://github.com/curiowls/meerkatta', icon: 'lucide:github' },
     ],
   },
   {
@@ -117,12 +133,28 @@ function onCarouselScroll() {
       </div>
     </section>
 
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8">
+      <nav aria-label="Selected work sections">
+        <div class="inline-flex items-center rounded-full border border-accent-500/20 bg-accent-500/10 px-1 py-0.5 text-accent-600">
+          <a
+            v-for="anchor in workAnchors"
+            :key="anchor.href"
+            :href="anchor.href"
+            class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-mono uppercase tracking-widest transition-colors"
+            :class="anchor.href === '#consumer-apps' ? 'bg-white/80 text-accent-700 shadow-sm' : 'hover:text-accent-700'"
+            @click.prevent="scrollToWorkAnchor(anchor.href)"
+          >
+            {{ anchor.label }}
+          </a>
+        </div>
+      </nav>
+    </div>
+
     <!-- ═══ DESIGNING & BUILDING — Carousel ═══ -->
-    <section class="pb-20">
+    <section id="consumer-apps" class="pb-20 scroll-mt-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
         <div class="flex items-end justify-between">
           <div>
-            <BadgePill label="Vibe Creating / AI-First Workflow" theme="light" class="mb-4" />
             <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight text-light-text">
               Designing & Building
             </h2>
@@ -222,9 +254,22 @@ function onCarouselScroll() {
     </section>
 
     <!-- ═══ B2B CASE STUDIES ═══ -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-8">
+    <section id="enterprise-b2b-systems" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-8 scroll-mt-24">
       <div class="mb-12">
-        <BadgePill label="B2B Case Studies" theme="light" class="mb-4" />
+        <nav class="mb-8" aria-label="Selected work sections">
+          <div class="inline-flex items-center rounded-full border border-accent-500/20 bg-accent-500/10 px-1 py-0.5 text-accent-600">
+            <a
+              v-for="anchor in workAnchors"
+              :key="anchor.href"
+              :href="anchor.href"
+              class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-mono uppercase tracking-widest transition-colors"
+              :class="anchor.href === '#enterprise-b2b-systems' ? 'bg-white/80 text-accent-700 shadow-sm' : 'hover:text-accent-700'"
+              @click.prevent="scrollToWorkAnchor(anchor.href)"
+            >
+              {{ anchor.label }}
+            </a>
+          </div>
+        </nav>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight text-light-text">
           Enterprise Product Design
         </h2>

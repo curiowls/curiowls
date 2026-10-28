@@ -92,9 +92,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="pt-16 overflow-x-clip">
+    <AppLaunchBanner />
     <!-- ═══ HERO ═══ -->
-    <section class="relative min-h-screen flex items-center pt-16">
+    <section class="relative min-h-[calc(100svh-24rem)] flex items-center py-16 lg:py-20">
       <!-- Background glow blobs -->
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-dai/5 rounded-full blur-3xl pointer-events-none" />
       <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
